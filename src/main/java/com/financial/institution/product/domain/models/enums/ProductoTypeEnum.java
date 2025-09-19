@@ -1,16 +1,16 @@
 package com.financial.institution.product.domain.models.enums;
 
 public enum ProductoTypeEnum {
-    CUENTA_CORRIENTE("33"),
-    CUENTA_AHORROS("53");
+    CHECKING_ACCOUNT("33"),
+    SAVING_ACCOUNT("53");
 
-    private final String prefijo;
+    private final String prefix;
 
-    ProductoTypeEnum(String prefijo) {
-        this.prefijo = prefijo;
+    ProductoTypeEnum(String prefix) {
+        this.prefix = prefix;
     }
 
-    public String getPrefijo() {
-        return prefijo;
+    public String getPrefix() {
+        return prefix;
     }
 }

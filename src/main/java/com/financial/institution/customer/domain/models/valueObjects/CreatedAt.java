@@ -9,6 +9,10 @@ public class CreatedAt {
         this.createAt = LocalDateTime.now();
     }
 
+    public CreatedAt(LocalDateTime createAt){
+        this.createAt = createAt;
+    }
+
     public LocalDateTime getCreateAt(){
         return createAt;
     }

@@ -11,23 +11,23 @@ public class Customer {
     private CreatedAt createdAt;
     private UpdateAt updateAt;
 
-    public Customer(CustomerId id, Identification identification, FullName fullName, Email email, BirthDate birthDate, CreatedAt createdAt, UpdateAt updateAt) {
+    public Customer(CustomerId id, Identification identification, FullName fullName, Email email, BirthDate birthDate, CreatedAt createdAt) {
         this.id = id;
         this.identification = identification;
         this.fullName = fullName;
         this.email = email;
         this.birthDate = birthDate;
         this.createdAt = createdAt;
-        this.updateAt = updateAt;
+        this.updateAt = new UpdateAt();
     }
 
-    public Customer(Identification identification, FullName fullName, Email email, BirthDate birthDate, CreatedAt createdAt, UpdateAt updateAt) {
+    public Customer(Identification identification, FullName fullName, Email email, BirthDate birthDate) {
         this.identification = identification;
         this.fullName = fullName;
         this.email = email;
         this.birthDate = birthDate;
-        this.createdAt = createdAt;
-        this.updateAt = updateAt;
+        this.createdAt = new CreatedAt();
+        this.updateAt = new UpdateAt();
     }
 
     public CustomerId getId() {return id;}

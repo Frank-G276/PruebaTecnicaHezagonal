@@ -1,9 +1,9 @@
 package com.financial.institution.customer.domain.models.enums;
 
 public enum IdentificationType {
-    CEDULA_CIUDADANIA("CC", "Cédula de Ciudadanía"),
-    CEDULA_EXTRANJERIA("CE", "Cédula de Extranjería"),
-    PASAPORTE("PA", "Pasaporte"),
+    CITIZEN_ID("CC", "Cédula de Ciudadanía"),
+    FOREIGN_ID("CE", "Cédula de Extranjería"),
+    PASSPORT("PA", "Pasaporte"),
     NIT("NIT", "Número de Identificación Tributaria");
 
     private final String code;
