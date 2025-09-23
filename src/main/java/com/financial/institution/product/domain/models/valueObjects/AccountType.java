@@ -1,15 +1,15 @@
 package com.financial.institution.product.domain.models.valueObjects;
 
-import com.financial.institution.product.domain.models.enums.ProductoTypeEnum;
+import com.financial.institution.product.domain.models.enums.ProductTypeEnum;
 
 public class AccountType {
-    private final ProductoTypeEnum accountType;
+    private final ProductTypeEnum accountType;
 
-    public AccountType( ProductoTypeEnum accountType) {
+    public AccountType( ProductTypeEnum accountType) {
         this.accountType = accountType;
     }
 
-    public ProductoTypeEnum getAccountType() {
+    public ProductTypeEnum getAccountType() {
         return accountType;
     }
 }

@@ -1,12 +1,12 @@
 package com.financial.institution.transaction.domain.models.enums;
 
-public enum TypeTransaction {
+public enum TypeTransactionEnum {
     DEPOSIT("Consignacion"),
     WITHDRAWAL("Retiro"),
     TRANSFER("Transferencia");
     private final String type;
 
-    TypeTransaction(String type) {
+    TypeTransactionEnum(String type) {
         this.type = type;
     }
 

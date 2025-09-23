@@ -2,8 +2,7 @@ package com.financial.institution.transaction.domain.models;
 
 import com.financial.institution.product.domain.models.valueObjects.AccountNumber;
 import com.financial.institution.product.domain.models.valueObjects.Balance;
-import com.financial.institution.product.domain.models.valueObjects.BalanceAvailable;
-import com.financial.institution.transaction.domain.models.enums.TypeTransaction;
+import com.financial.institution.transaction.domain.models.enums.TypeTransactionEnum;
 import com.financial.institution.transaction.domain.models.valueObjects.Amount;
 import com.financial.institution.transaction.domain.models.valueObjects.Description;
 import com.financial.institution.transaction.domain.models.valueObjects.IdTransaction;
@@ -15,10 +14,10 @@ public class Transaction {
     private Amount amount;
     private Description description;
     private Balance originBalance;
-    private BalanceAvailable originBalanceAvailable;
-    private TypeTransaction typeTransaction;
+    private Balance originBalanceAvailable;
+    private TypeTransactionEnum typeTransaction;
 
-    public Transaction(IdTransaction idTransaction, AccountNumber originAccountNumber, AccountNumber destinationAccountNumber, Amount amount, Description description, Balance originBalance, BalanceAvailable originBalanceAvailable, TypeTransaction typeTransaction) {
+    public Transaction(IdTransaction idTransaction, AccountNumber originAccountNumber, AccountNumber destinationAccountNumber, Amount amount, Description description, Balance originBalance, Balance originBalanceAvailable, TypeTransactionEnum typeTransaction) {
         this.idTransaction = idTransaction;
         this.originAccountNumber = originAccountNumber;
         this.destinationAccountNumber = destinationAccountNumber;
@@ -29,7 +28,7 @@ public class Transaction {
         this.typeTransaction = typeTransaction;
     }
 
-    public Transaction(AccountNumber originAccountNumber, AccountNumber destinationAccountNumber, Amount amount, Description description, Balance originBalance, BalanceAvailable originBalanceAvailable, TypeTransaction typeTransaction) {
+    public Transaction(AccountNumber originAccountNumber, AccountNumber destinationAccountNumber, Amount amount, Description description, Balance originBalance, Balance originBalanceAvailable, TypeTransactionEnum typeTransaction) {
         this.originAccountNumber = originAccountNumber;
         this.destinationAccountNumber = destinationAccountNumber;
         this.amount = amount;
@@ -63,11 +62,11 @@ public class Transaction {
         return originBalance;
     }
 
-    public BalanceAvailable getOriginBalanceAvailable() {
+    public Balance getOriginBalanceAvailable() {
         return originBalanceAvailable;
     }
 
-    public TypeTransaction getTypeTransaction() {
+    public TypeTransactionEnum getTypeTransaction() {
         return typeTransaction;
     }
 }

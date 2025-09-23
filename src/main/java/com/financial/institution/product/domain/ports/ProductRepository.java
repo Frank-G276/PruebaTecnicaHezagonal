@@ -13,4 +13,5 @@ public interface ProductRepository {
     Optional<Product> findById(IdProduct idProduct);
     void deleteById(IdProduct idProduct);
     List<Product> findByIdentificationNumberCustomer(Identification identification);
+    Boolean existAccountNumber(String number);
 }
