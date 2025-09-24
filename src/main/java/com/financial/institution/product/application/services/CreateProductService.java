@@ -1,6 +1,6 @@
 package com.financial.institution.product.application.services;
 
-import com.financial.institution.product.application.Dto.CreateProductDto;
+import com.financial.institution.product.application.dto.CreateProductDto;
 import com.financial.institution.product.application.useCases.CreateProductUseCase;
 import com.financial.institution.product.domain.models.Product;
 import com.financial.institution.product.domain.models.enums.AccountStateEnum;

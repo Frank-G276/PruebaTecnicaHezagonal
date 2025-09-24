@@ -1,7 +1,9 @@
 package com.financial.institution.transaction.domain.models;
 
+import com.financial.institution.customer.domain.models.valueObjects.CreatedAt;
 import com.financial.institution.product.domain.models.valueObjects.AccountNumber;
 import com.financial.institution.product.domain.models.valueObjects.Balance;
+import com.financial.institution.product.domain.models.valueObjects.IdProduct;
 import com.financial.institution.transaction.domain.models.enums.TypeTransactionEnum;
 import com.financial.institution.transaction.domain.models.valueObjects.Amount;
 import com.financial.institution.transaction.domain.models.valueObjects.Description;
@@ -9,45 +11,51 @@ import com.financial.institution.transaction.domain.models.valueObjects.IdTransa
 
 public class Transaction {
     private IdTransaction idTransaction;
-    private AccountNumber originAccountNumber;
-    private AccountNumber destinationAccountNumber;
+    private IdProduct originIdProduct;
+    private IdProduct destinationIdProduct;
     private Amount amount;
     private Description description;
     private Balance originBalance;
-    private Balance originBalanceAvailable;
     private TypeTransactionEnum typeTransaction;
+    private CreatedAt createdAt;
 
-    public Transaction(IdTransaction idTransaction, AccountNumber originAccountNumber, AccountNumber destinationAccountNumber, Amount amount, Description description, Balance originBalance, Balance originBalanceAvailable, TypeTransactionEnum typeTransaction) {
+    public Transaction(IdTransaction idTransaction, IdProduct originIdProduct, IdProduct destinationIdProduct, Amount amount, Description description, Balance originBalance, TypeTransactionEnum typeTransaction, CreatedAt createdAt) {
+        if (originIdProduct == null) {
+            throw new IllegalArgumentException("El producto de origen es obligatorio");
+        }
         this.idTransaction = idTransaction;
-        this.originAccountNumber = originAccountNumber;
-        this.destinationAccountNumber = destinationAccountNumber;
+        this.originIdProduct = originIdProduct;
+        this.destinationIdProduct = destinationIdProduct;
         this.amount = amount;
         this.description = description;
         this.originBalance = originBalance;
-        this.originBalanceAvailable = originBalanceAvailable;
         this.typeTransaction = typeTransaction;
+        this.createdAt = createdAt;
     }
 
-    public Transaction(AccountNumber originAccountNumber, AccountNumber destinationAccountNumber, Amount amount, Description description, Balance originBalance, Balance originBalanceAvailable, TypeTransactionEnum typeTransaction) {
-        this.originAccountNumber = originAccountNumber;
-        this.destinationAccountNumber = destinationAccountNumber;
+    public Transaction(IdProduct originIdProduct, IdProduct destinationIdProduct, Amount amount, Description description, Balance originBalance, TypeTransactionEnum typeTransaction) {
+        if (originIdProduct == null) {
+            throw new IllegalArgumentException("El producto de origen es obligatorio");
+        }
+        this.originIdProduct = originIdProduct;
+        this.destinationIdProduct = destinationIdProduct;
         this.amount = amount;
         this.description = description;
         this.originBalance = originBalance;
-        this.originBalanceAvailable = originBalanceAvailable;
         this.typeTransaction = typeTransaction;
+        this.createdAt = new CreatedAt();
     }
 
     public IdTransaction getIdTransaction() {
         return idTransaction;
     }
 
-    public AccountNumber getOriginAccountNumber() {
-        return originAccountNumber;
+    public IdProduct getOriginIdProduct() {
+        return originIdProduct;
     }
 
-    public AccountNumber getDestinationAccountNumber() {
-        return destinationAccountNumber;
+    public IdProduct getDestinationIdProduct() {
+        return destinationIdProduct;
     }
 
     public Amount getAmount() {
@@ -62,11 +70,9 @@ public class Transaction {
         return originBalance;
     }
 
-    public Balance getOriginBalanceAvailable() {
-        return originBalanceAvailable;
-    }
-
     public TypeTransactionEnum getTypeTransaction() {
         return typeTransaction;
     }
+
+    public CreatedAt getCreatedAt(){ return createdAt;}
 }

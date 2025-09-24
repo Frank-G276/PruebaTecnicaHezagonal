@@ -4,7 +4,7 @@ public class IdProduct {
     private final Long idProduct;
 
     public IdProduct(Long idProduct) {
-        if (idProduct == null || idProduct < 0 ) throw new IllegalArgumentException("Id producto invalido: " + idProduct);
+        if (idProduct < 0 ) throw new IllegalArgumentException("Id producto invalido: " + idProduct);
         this.idProduct = idProduct;
     }
 

@@ -1,4 +1,4 @@
-package com.financial.institution.customer.application.Dto;
+package com.financial.institution.customer.application.dto;
 
 import com.financial.institution.customer.domain.models.enums.IdentificationType;
 

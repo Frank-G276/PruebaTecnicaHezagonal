@@ -1,4 +1,4 @@
-package com.financial.institution.product.application.Dto;
+package com.financial.institution.product.application.dto;
 
 import com.financial.institution.transaction.domain.models.enums.TypeTransactionEnum;
 import com.financial.institution.transaction.domain.models.valueObjects.Amount;

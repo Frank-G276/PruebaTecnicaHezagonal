@@ -1,6 +1,6 @@
 package com.financial.institution.customer.application.services;
 
-import com.financial.institution.customer.application.Dto.UpdateCustomerDTO;
+import com.financial.institution.customer.application.dto.UpdateCustomerDTO;
 import com.financial.institution.customer.application.useCases.UpdateCustomerUseCase;
 import com.financial.institution.customer.domain.models.Customer;
 import com.financial.institution.customer.domain.models.valueObjects.*;

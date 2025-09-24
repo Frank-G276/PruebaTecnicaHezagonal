@@ -1,5 +1,7 @@
 package com.financial.institution.product.domain.models.valueObjects;
 
+import com.financial.institution.transaction.domain.models.valueObjects.Amount;
+
 import java.math.BigDecimal;
 
 public class Balance {
@@ -12,5 +14,13 @@ public class Balance {
 
     public BigDecimal getBalance(){
         return balance;
+    }
+
+    public Balance add(Amount amount){
+        return new Balance(this.balance.add(amount.getAmount()));
+    }
+
+    public Balance subtract(Amount amount){
+        return new Balance(this.balance.subtract(amount.getAmount()));
     }
 }

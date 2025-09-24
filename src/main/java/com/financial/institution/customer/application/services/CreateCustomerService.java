@@ -1,6 +1,6 @@
 package com.financial.institution.customer.application.services;
 
-import com.financial.institution.customer.application.Dto.CreateCustomerDTO;
+import com.financial.institution.customer.application.dto.CreateCustomerDTO;
 import com.financial.institution.customer.application.useCases.CreateCustomerUseCase;
 import com.financial.institution.customer.domain.models.Customer;
 import com.financial.institution.customer.domain.models.valueObjects.BirthDate;

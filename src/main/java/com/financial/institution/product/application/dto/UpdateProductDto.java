@@ -1,4 +1,4 @@
-package com.financial.institution.product.application.Dto;
+package com.financial.institution.product.application.dto;
 
 import com.financial.institution.product.domain.models.enums.AccountStateEnum;
 import com.financial.institution.product.domain.models.enums.ProductTypeEnum;
