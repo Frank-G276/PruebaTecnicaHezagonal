@@ -5,7 +5,6 @@ import com.financial.institution.transaction.application.useCases.CreateDepositT
 import com.financial.institution.transaction.application.useCases.CreateTransactionUseCase;
 import com.financial.institution.transaction.application.useCases.CreateTransferTransactionUseCase;
 import com.financial.institution.transaction.application.useCases.CreateWithdrawalTransactionUseCase;
-import com.financial.institution.transaction.domain.models.Transaction;
 import com.financial.institution.transaction.domain.ports.TransactionRepository;
 
 import com.financial.institution.transaction.domain.models.enums.TypeTransactionEnum;
@@ -22,7 +21,7 @@ public class CreateTransactionService implements CreateTransactionUseCase {
     }
 
     @Override
-    public Transaction execute(CreateTransactionDto transactionDto) {
+    public Object execute(CreateTransactionDto transactionDto) {
         TypeTransactionEnum type = TypeTransactionEnum.valueOf(transactionDto.typeTransaction());
         return switch (type){
             case DEPOSIT -> createDepositTransactionUseCase.execute(transactionDto);

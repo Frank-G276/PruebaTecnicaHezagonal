@@ -40,4 +40,9 @@ public class ProductRepositoryAdapter implements ProductRepository {
     public List<Product> findByIdentificationNumberCustomer(Identification identification) {
         return repositoryJPA.getByNumber(identification.getNumber());
     }
+
+    @Override
+    public Boolean existAccountNumber(String number) {
+        return null;
+    }
 }
